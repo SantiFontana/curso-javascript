@@ -20,7 +20,7 @@ numerazo1 = 10;
 
 numerazo2 = 5;
 
-resultado = numerazo1&numerazo2;
+let resultado = numerazo1&numerazo2;
 
 alert(resultado)
 

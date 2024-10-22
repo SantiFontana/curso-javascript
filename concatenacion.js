@@ -1,5 +1,5 @@
-nombre = "Santiago Fontana";
+let nombre = "Santiago Fontana";
 
-frase = `Soy ${nombre} y estoy caminando`;
+let frase = `Soy ${nombre} y estoy caminando`;
 
 document.write(frase);
