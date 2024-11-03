@@ -69,3 +69,24 @@ for (let array in array2) {
         document.write(array2[array] + "<br>");
     }
 }
+
+// Ejemplo
+let numero = 7;
+let intento = 0;
+let encontrado = false;
+let totalIntentos = 3;
+
+while(intento < totalIntentos){
+    let n = prompt(`Ingrese un numero, intento: ${intento+1} de ${totalIntentos}: `);
+    if((parseInt(n) === numero)){
+        encontrado = true;
+        break;
+    };
+    intento++;
+};
+
+if(encontrado){
+    document.write("Felcidades acertaste el número.");
+}else{
+    document.write(`Lo siento no acertaste el número en ${intento} intentos`);
+};
