@@ -1,7 +1,8 @@
 let frutas = ["banana","manzana","pera"]
 
-document.write(frutas[1])
-
+console.log(frutas[1])
+frutas.includes("naranja")
+console.log(frutas.length)
 
 //Arrays asociativos
 
@@ -22,4 +23,4 @@ let frase = `el nombre de mi PC es: <b>${nombre}</b> <br>
             la memoria ram es: <b>${ram}</b> <br>
             el espacio en disco es: <b>${espacio}</b> <br>` 
 
-document.write(frase)
+console.log(frase)
