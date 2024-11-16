@@ -1,47 +1,52 @@
 
-const producto = {
-    id: "LBM555",
-    nombre: "Notebook Assus i7",
-    categoria: "Tecnología",
-    precio: 500,
-    "descripcion": "Computadora rapida",
-    componentes: {
-        procesador: "Intel i7 12th",
-        ram: "Kingstom"
+class Animal {
+    constructor(especie,edad,color) {
+        this.especie = especie;
+        this.edad = edad;
+        this.color = color;
+        this.informacion = `Soy un ${this.especie}, tengo ${this.edad} años y soy de color ${this.color}`;
+    }
+    verInformación() {
+        document.write(this.informacion + "<br>")
+    }
+    ladrar(){
+        if (this.especie == "perro") {
+            document.write("¡Wof! <br>");
+        } else {
+            document.write("No puede ladrar ya que es un " + this.especie + "<br>");
+        }
     }
 }
 
-const { nombre, id, categoria } = producto;
-const { nombre: nombreProducto, categoriaProducto } = producto;
-Object.freeze(producto)
-producto.memoria = [8, 16, 32]
-console.log(producto.memoria)
-console.log(producto.nombre)
-console.log(producto["descripcion"])
-delete producto.memoria
-console.log(Object.entries(producto))
+class Perro extends Animal {
+    constructor(especie, edad, color, raza) {
+        super(especie, edad, color);
+        this.raza = null;
+    }
+    set setRaza(newName){
+        this.raza = newName;
+    }
 
-const inventario = [
-    {nombre: "Celular", categoria: "Tecnología", precio: "300"},
-    {nombre: "Mesa", categoria: "Hogar", precio: 100},
-]
-
-console.log(inventario[0]);
-
-for (let [index, producto] of inventario.entries()) {
-    console.log(`Producto ${index} : ${producto.nombre}`)
-}
-
-
-const persona = {
-    nombre: "Juan",
-    edad: 30,
-    profesion: "Desarrollador",
-    saludar: function() {
-        console.log("Hola, mi nombre es " + this.nombre);
+    get getRaza(){
+        return this.raza;
     }
 }
 
-const { Pepe, profesion = "Desconocida" } = persona;
+const perro = new Perro("perro", 5, "marron", "doberman");
+const gato = new Animal("gato", 2, "negro");
+const pajaro = new Animal("pájaro", 3, "verde");
 
-console.log(persona)
+// document.write(perro.informacion + "<br>")
+// document.write(gato.informacion + "<br>")
+// document.write(pajaro.informacion + "<br>")
+
+perro.verInformación();
+gato.verInformación();
+pajaro.verInformación();
+
+perro.ladrar();
+gato.ladrar();
+pajaro.ladrar();
+
+perro.setRaza = "Labrador"
+document.write(perro.getRaza)
